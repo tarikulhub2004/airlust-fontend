@@ -3,7 +3,7 @@ import React from 'react';
 const LoadingPage = () => {
     return (
         <div className='text-center text-3xl h-[vh80] my-auto'>
-            Loading....
+            <span className="loading loading-bars loading-xl"></span>
         </div>
     );
 };
