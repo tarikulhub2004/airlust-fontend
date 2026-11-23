@@ -1,7 +1,10 @@
 export const instant = false;
+import BuyNowCard from "@/components/BuyNowCard";
 import { DeleteAlert } from "@/components/DeleteAlert";
 import { EditModal } from "@/components/EditModal";
+import { auth } from "@/lib/auth";
 import { Card } from "@heroui/react";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,10 +13,18 @@ import { LuMapPin } from "react-icons/lu";
 
 const DestinationDetailsPage = async ({ params }) => {
     const { id } = await params;
+    const { token } = await auth.api.getToken({
+        headers: await headers()
+    })
+    console.log(token)
 
-    const res = await fetch(`http://localhost:5000/destination/${id}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${id}`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    })
 
-    if(!res.ok){
+    if (!res.ok) {
         notFound()
     }
     const destination = await res.json()
@@ -50,26 +61,8 @@ const DestinationDetailsPage = async ({ params }) => {
                     <p className="text-zinc-500">{description}</p>
                 </div>
 
-                <Card className="col-span-1">
-                    <div className="">
-                        <div className="">
-                            <p>Starting from</p>
-                            <p className="text-2xl text-cyan-500">${price}</p>
-                            <p>per person</p>
-                        </div>
-                        <hr className="my-3 text-gray-200" />
-                        <div className="flex items-center gap-1 bg-[#F8FAFC] p-2 border">{departureDate}</div>
+                <BuyNowCard destination={destination}></BuyNowCard>
 
-                        <div className="">
-                            <button className="text-2xl cursor-pointer bg-cyan-500 hover:bg-cyan-700 active:bg-cyan-950 w-full my-5 p-2 text-white">Buy Now</button>
-                        </div>
-                        <div className="text-zinc-500">
-                            <p>Free cancellation up to 7 days</p>
-                            <p>Travel insurance included</p>
-                            <p>24/7 customer support</p>
-                        </div>
-                    </div>
-                </Card>
             </div>
 
         </div>

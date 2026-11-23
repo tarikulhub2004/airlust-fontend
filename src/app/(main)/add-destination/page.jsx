@@ -1,16 +1,18 @@
 'use client'
 import { Button, FieldError, Input, Label, ListBox, TextArea, TextField, Select, Card } from "@heroui/react";
+import { redirect } from "next/navigation";
+import { toast } from "react-toastify";
 
 const AddDestination = () => {
 
-    const addDestination = async(e) => {
+    const addDestination = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
         const destination = Object.fromEntries(formData.entries());
 
         console.log(destination)
 
-        const res = await fetch('http://localhost:5000/destination', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -18,8 +20,10 @@ const AddDestination = () => {
             body: JSON.stringify(destination)
         });
         const data = await res.json();
-        
-        console.log(data)
+
+        // console.log(data)
+        toast.success("Add New Destination Successfully")
+        redirect("/destinatios")
     }
 
     return (

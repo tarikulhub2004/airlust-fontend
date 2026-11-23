@@ -6,9 +6,9 @@ import { FiExternalLink } from "react-icons/fi";
 import { LuMapPin } from "react-icons/lu";
 
 const DestinationCard = ({ destination }) => {
-    const {_id, destinationName, country, category, price, duration, departureDate, imageUrl, description } = destination;
+    const { _id, destinationName, country, category, price, duration, departureDate, imageUrl, description } = destination;
     return (
-        <Card>
+        <Card className="">
             <div>
                 <Image className="h-40 object-cover rounded-xl"
                     alt={destinationName}
@@ -25,7 +25,7 @@ const DestinationCard = ({ destination }) => {
                     </div>
                     <div className="flex items-center gap-1"><FaRegCalendar /> {departureDate}</div>
                 </div>
-                <Link href={`/destinations/${_id}`}><Button variant="ghost" className='text-cyan-500 flex items-center'>Book Now <FiExternalLink /></Button></Link>
+                <Link href={`/destinatios/${_id}`}><Button variant="ghost" className='text-cyan-500 flex items-center'>Book Now <FiExternalLink /></Button></Link>
             </div>
         </Card>
     );
