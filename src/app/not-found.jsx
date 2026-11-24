@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 px-5 py-16">
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br px-5 py-16">
 
       <div className="max-w-2xl w-full text-center">
 
         {/* Illustration */}
         <div className="relative mb-8">
-          <div className="absolute inset-0 blur-3xl bg-indigo-500/20 rounded-full"></div>
+          <div className="absolute inset-0 blur-3xl rounded-full"></div>
 
-          <h1 className="relative text-[120px] sm:text-[180px] font-black leading-none tracking-tighter bg-gradient-to-b from-white via-indigo-200 to-indigo-500 bg-clip-text text-transparent">
+          <h1 className="relative text-[120px] sm:text-[180px] font-black leading-none tracking-tighter bg-gradient-to-b via-indigo-200 to-indigo-500 bg-clip-text text-transparent">
             404
           </h1>
 
@@ -41,7 +41,7 @@ export default function NotFound() {
           <div className="flex justify-center pt-5">
             <Link
               href="/"
-              className="group flex items-center gap-3 rounded-xl bg-indigo-600 px-8 py-4 font-semibold text-white shadow-lg shadow-indigo-600/30 transition-all duration-300 hover:-translate-y-1 hover:bg-indigo-500 hover:shadow-indigo-500/40"
+              className="group flex items-center gap-3 rounded-xl px-8 py-4 font-semibold shadow-lg shadow-indigo-600/30 transition-all duration-300 hover:-translate-y-1 hover:bg-indigo-500 hover:shadow-indigo-500/40"
             >
               <span>Back to Home</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">

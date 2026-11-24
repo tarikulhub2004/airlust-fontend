@@ -70,7 +70,7 @@ const BuyNowCard = ({ destination }) => {
                     {/* </div> */}
 
                     <div className="">
-                        <button onClick={handleBooking} className="text-2xl cursor-pointer bg-cyan-500 hover:bg-cyan-700 active:bg-cyan-950 w-full my-5 p-2 text-white">Buy Now</button>
+                        <button onClick={handleBooking} className="text-2xl cursor-pointer bg-cyan-500 hover:bg-cyan-700 active:bg-cyan-950 w-full my-5 p-2 text-white">Book Now</button>
                     </div>
                     <div className="text-zinc-500">
                         <p>Free cancellation up to 7 days</p>

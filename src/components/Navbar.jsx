@@ -67,7 +67,7 @@ const Navbar = () => {
 
             <ul
                 className="lg:flex gap-2 p-2 hidden lg:block">
-                <li><Link className="btn p-1 h-5 font-normal hover:text-blue-300 border-none"  href={'/'}>Home</Link></li>
+                <li><Link className="btn p-1 h-5 font-normal hover:text-blue-300 border-none" href={'/'}>Home</Link></li>
                 <li><Link className="btn p-1 h-5 font-normal hover:text-blue-300 border-none" href={'/destinatios'}>Destinations</Link></li>
                 <li><Link className="btn p-1 h-5 font-normal hover:text-blue-300 border-none" href={'/add-destination'}>Add Destination</Link></li>
                 <li><Link className="btn p-1 h-5 font-normal hover:text-blue-300 border-none" href={'/my-bookings'}>My Bookings</Link></li>
@@ -89,16 +89,18 @@ const Navbar = () => {
                 {isPending ? <h1>Loading...</h1>
                     : season ?
                         <>
-                            <li>
-                                <Avatar>
-                                    <Avatar.Image
-                                        referrerPolicy="no-referrer"
-                                        alt="Blue"
-                                        src={user?.image}
-                                    />
-                                    <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
-                                </Avatar>
-                            </li>
+                            <Link href={'/profile'}>
+                                <li>
+                                    <Avatar>
+                                        <Avatar.Image
+                                            referrerPolicy="no-referrer"
+                                            alt="Blue"
+                                            src={user?.image}
+                                        />
+                                        <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+                                    </Avatar>
+                                </li>
+                            </Link>
                             <li>
                                 <LogoutAlert />
                             </li>

@@ -90,7 +90,7 @@ const LoginPage = () => {
                     </TextField>
                     <div className="gap-2">
                         <Button className='w-full rounded-none bg-[#15A1BF]' type="submit">
-                            Create Account
+                            Login
                         </Button>
                     </div>
                 </Form>
