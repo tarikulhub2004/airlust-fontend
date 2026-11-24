@@ -61,7 +61,7 @@ const MyBookingSPage = async () => {
                     <div className="">
                         {
                             data.map(booking => <div key={booking._id}>
-                                <div className="p-5 my-5 shadow flex">
+                                <div className="p-5 my-5 shadow md:flex">
                                     <Image className="w-90 h-auto" src={booking?.imageUrl} width={400} height={200} alt="Image"></Image>
                                     <div className="ml-5 w-full">
                                         <div className=" pt-3 flex flex-col gap-3 ">
@@ -76,7 +76,7 @@ const MyBookingSPage = async () => {
                                             <h4>Booking ID: {booking?.userId}</h4>
 
                                         </div>
-                                        <div className="flex justify-between items-center">
+                                        <div className="md:flex justify-between items-center">
                                             <h1 className="text-3xl text-[#15A1BF] mt-5">${booking?.price}</h1>
                                             <div className="flex gap-3">
 

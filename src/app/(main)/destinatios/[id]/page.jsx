@@ -52,7 +52,7 @@ const DestinationDetailsPage = async ({ params }) => {
 
             <hr className="text-gray-50 my-5" />
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-3 gap-5">
                 <div className="col-span-2">
                     <div className="flex items-center gap-1"> <LuMapPin /><span>{country}</span></div>
                     <h1 className="mt-5 text-2xl font-bold">Overview</h1>
