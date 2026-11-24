@@ -11,11 +11,12 @@ import { ArrowRight } from "@gravity-ui/icons";
 
 
 const Featured = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/featured`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/featured`,
+        { next: { revalidate: 3600 } }
+    )
     const data = await res.json()
     // console.log(data)
 
-    // const { _id, destinationName, country, category, price, duration, departureDate, imageUrl, description } = data;
 
 
     return (
@@ -44,12 +45,12 @@ const Featured = async () => {
                     <div className="collapse collapse-arrow join-item border-base-300 border">
                         <input type="radio" name="my-accordion-4" />
                         <div className="collapse-title font-semibold">I forgot my password. What should I do?</div>
-                         <div className="collapse-content text-sm">This Feature is coming soon.</div>
+                        <div className="collapse-content text-sm">This Feature is coming soon.</div>
                     </div>
                     <div className="collapse collapse-arrow join-item border-base-300 border">
                         <input type="radio" name="my-accordion-4" />
                         <div className="collapse-title font-semibold">How do I update my profile information?</div>
-                         <div className="collapse-content text-sm">This Feature is coming soon.</div>
+                        <div className="collapse-content text-sm">This Feature is coming soon.</div>
                     </div>
                 </div>
             </div>
